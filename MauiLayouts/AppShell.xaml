@@ -9,6 +9,7 @@
     <TabBar>
         <ShellContent Title="Stack" ContentTemplate="{DataTemplate local:StackDemoPage}" />
         <ShellContent Title="Grid" Icon="grid.png" ContentTemplate="{DataTemplate local:GridDemoPage}" />
+        <ShellContent Title="Spacing" ContentTemplate="{DataTemplate local:MarginSpacingPaddingDemoPage}" />
         <ShellContent Title="Binding" ContentTemplate="{DataTemplate local:BindingDemoPage}" />
     </TabBar>
 </Shell>

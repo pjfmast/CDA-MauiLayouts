@@ -1,16 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MauiLayouts.ViewModels
 {
     public class MainViewModel : INotifyPropertyChanged
     {
-        public DateTime AppPublished { get; set; } = new DateTime(2022, 4, 20);
+        // DatePicker binding to C#11 DateOnly still open issue: https://github.com/dotnet/maui/issues/1100
+        private DateOnly dayOfBirth;
+
+        public DateOnly DayOfBirth
+        {
+            get { return dayOfBirth; }
+            set
+            {
+                dayOfBirth = value;
+                OnPropertyChanged();
+                OnPropertyChanged(nameof(DisplayName));
+            }
+        }
+
 
         private string surName;
 
@@ -44,7 +52,7 @@ namespace MauiLayouts.ViewModels
             }
         }
 
-        public string DisplayName => $"Name: {surName} {lastName}";
+        public string DisplayName => $"{surName} {lastName} born on {dayOfBirth}";
 
         public event PropertyChangedEventHandler PropertyChanged;
 
