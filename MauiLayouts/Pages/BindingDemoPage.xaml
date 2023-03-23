@@ -13,9 +13,7 @@
     
     <VerticalStackLayout Padding="20">
         <VerticalStackLayout.Resources>
-            <ResourceDictionary>
                 <converters:DateTimeToDateOnlyConverter x:Key="DateTimeDateOnly"/>
-            </ResourceDictionary>
         </VerticalStackLayout.Resources>
         
         <Label Text="Day of birth:"  />
